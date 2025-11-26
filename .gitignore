@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.egg-info/
+*.egg
+.env
+.venv/
+
+# Flask / temp files
+*.mp3
+*.pdf
+pdf_to_mp3_outputs/
