@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDF → MP3 Converter</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="container">
+<h1>PDF → MP3 (English)</h1>
+<p>Upload an English PDF and get an MP3 audio file of the extracted text.</p>
+
+
+<form id="uploadForm" action="/convert" method="post" enctype="multipart/form-data">
+<label class="file-input">
+<input type="file" name="pdf" accept="application/pdf" required>
+<span>Choose PDF</span>
+</label>
+
+
+<button type="submit" class="btn">Convert to MP3</button>
+</form>
+
+
+<div id="spinner" class="hidden">Processing... please wait.</div>
+
+
+<footer>
+<small>Built with Flask • Uses gTTS (Google Text-to-Speech) — requires internet access</small>
+</footer>
+</main>
+
+
+<script>
+const form = document.getElementById('uploadForm');
+const spinner = document.getElementById('spinner');
+form.addEventListener('submit', () => {
+spinner.classList.remove('hidden');
+});
+</script>
+</body>
+</html>
